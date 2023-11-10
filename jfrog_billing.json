@@ -1,0 +1,115 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "jfrog_billing_log": {
+        "title": "JFrog Billing Report",
+        "url": "https://github.com/bitle/lnav-format-jfrog-billing",
+        "description": "Lnav format for reading JFrog Billing Report files",
+        "json": true,
+	"file-pattern": "artifactory-traffic-.*.log",
+        "line-format": [
+            {
+                "field": "billing_timestamp"
+            },
+            " - ",
+            {
+                "field": "server_name"
+            },
+            " ",
+            {
+                "field": "service"
+            },
+            " ",
+            {
+                "field": "action"
+            },
+	    " [ ",
+            {
+                "field": "ip",
+		"auto-width": true,
+		"align": "right"
+            },
+            " ] ",
+            {
+                "field": "repository",
+		"auto-width": true
+            },
+            " ",
+            {
+                "field": "user_name",
+		"auto-width": true
+            },
+            " ",
+            {
+                "field": "package_type",
+		"auto-width": true
+            },
+            " ",
+            {
+                "field": "repo_type",
+		"auto-width": true
+            },
+            " ",
+            {
+                "field": "quantity",
+		"auto-width": true,
+		"align": "right"
+            },
+            " ",
+            {
+                "field": "consumption_unit"
+            },
+	    " - ",
+            {
+                "field": "artifact_path"
+            }
+        ],
+        "value": {
+            "billing_timestamp": {
+                "kind": "string"
+            },
+            "server_name": {
+                "kind": "string"
+            },
+            "service": {
+                "kind": "string"
+            },
+            "action": {
+                "kind": "string"
+            },
+            "ip": {
+                "kind": "string",
+		"identifier": true
+            },
+            "repository": {
+                "kind": "string"
+            },
+            "project": {
+                "kind": "string",
+		"hidden": true
+            },
+            "artifact_path": {
+                "kind": "string",
+                "identifier": true
+            },
+            "user_name": {
+                "kind": "string"
+            },
+            "package_type": {
+                "kind": "string"
+            },
+            "repo_type": {
+                "kind": "string"
+            },
+            "consumption_unit": {
+                "kind": "string"
+            },
+            "quantity": {
+                "kind": "integer"
+            }
+        },
+        "timestamp-field": "billing_timestamp",
+	"timestamp-format": "%Y-%M-%d %H:%m:%s.%L",
+        "body-field": "artifact_path"
+    }
+}
+
