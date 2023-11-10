@@ -14,5 +14,6 @@ lnav artifactory-traffic-2023-11-10-4a3d4e4a.log.gz
 ```
 
 # Links
-(Lnav)[https://github.com/tstack/lnav]
+[Lnav](https://github.com/tstack/lnav)
+
 [Data Transfer Logs](https://jfrog.com/help/r/jfrog-hosting-models-documentation/view-data-transfer-logs)
